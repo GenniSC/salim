@@ -108,11 +108,25 @@
     alt="Feliz dia dos namorados"
   />
 
-  <div class="music">
-   <audio controls loop>
-  <source src="ride.mp3" type="audio/mpeg">
-    
-</audio>
+  
+   <div class="music">
+  <button onclick="playMusic()" style="padding: 10px 20px; font-size: 1em; background: #f8a5c2; border: none; border-radius: 10px; color: white; cursor: pointer;">
+    Tocar música 🎵
+  </button>
+  <audio id="musica" loop>
+    <source src="ride.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+</div>
+
+<script>
+  function playMusic() {
+    const audio = document.getElementById('musica');
+    audio.play().catch(err => {
+      alert('Não foi possível reproduzir a música: ' + err.message);
+    });
+  }
+</script>
   </div>
 
   <footer>
